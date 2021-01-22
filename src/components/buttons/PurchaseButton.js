@@ -30,10 +30,7 @@ function PurchaseButton({ title, subtitle }) {
 
 export default PurchaseButton
 
-const StyledLink = styled(Link)`
 
-    text-decoration: none;
-`
 const Wrapper = styled.div`
     max-width: 280px;
     height: 77px;

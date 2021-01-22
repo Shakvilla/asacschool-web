@@ -1,33 +1,39 @@
 import { Link } from 'gatsby'
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import logo from '../../images/icons/logo.svg'
 import { menuData } from '../../data/menuData'
+import MenuButton from '../buttons/MenuButton'
+import MenuTooltip from '../tooltips/MenuTooltip'
 
 
 function Header() {
+    const [isOpen, setIsOpen] = useState(false)
+
     return (
-        <Wrapper>
+        <Wrapper onClick={() => setIsOpen(!isOpen)}>
             <Link to="/">
                 <img src={logo} alt="asacschool" className="logo" />
             </Link>
             <MenuWrapper count={menuData.length}>
-                {menuData.map((item, index) => (
-                    <Link to={item.link} key={index}>
-                        <MenuItem title={item.title}>
-                            <img src={item.icon} alt={item.title} />
-                            {item.title}
-                        </MenuItem>
+                {menuData.map((item, index) =>
+                    item.link === "/accounts" ? (
+                        <MenuButton onClick={() => setIsOpen(!isOpen)}>Account</MenuButton>
+                    ) : (
+                            <MenuButton key={index} item={item}
 
-                    </Link>
-                ))}
+                                onClick={() => setIsOpen(!isOpen)}
+                            />
+
+                        )
+                )}
             </MenuWrapper>
+            <MenuTooltip isOpen={isOpen} />
         </Wrapper>
     )
 }
 
 export default Header
-
 
 const Wrapper = styled.div`
     position: absolute;
@@ -54,21 +60,3 @@ const MenuWrapper = styled.div`
 `
 
 
-const MenuItem = styled.div`
-    color: rgba(255, 255, 255, 0.7);
-    display: grid;
-    grid-template-columns: 24px auto;
-    gap: ${title => title ? "10x" : "0px"};
-    align-items: center;
-    padding: 10px;
-    transition: 0.5s ease-out;
-    :hover{
-        background: rgba(255, 255, 255, 0.1);
-        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1),
-        inset 0px 0px 0px 0.5px rgba(255, 255, 255, 0.2);
-        border-radius: 10px;
-
-
-    }
-
-`

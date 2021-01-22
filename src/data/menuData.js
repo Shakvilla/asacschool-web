@@ -17,14 +17,17 @@ export const menuData = [
         link: '/pricing'
     },
     {
+        title: 'Accounts',
+        icon: '../../images/icons/tutorials.svg',
+        link: '/accounts'
+    },
+    {
         title: '',
         icon: '../../images/icons/search.svg',
         link: '/search'
     },
 
-    {
-        title: '',
-        icon: '../../images/icons/accounts.svg',
-        link: '/accounts'
-    },
+
+
+
 ]
