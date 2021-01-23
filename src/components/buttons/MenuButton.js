@@ -5,7 +5,7 @@ import { Link } from 'gatsby'
 function MenuButton(props) {
     const { item } = props
     return (
-        <Link to={item.link}>
+        <Link to={item.link} onClick={props.onClick}>
             <MenuItem hasTitle={!item.title ? false : true}>
                 <img src={item.icon} alt={item.title} />
                 {item.title}

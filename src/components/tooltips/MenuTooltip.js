@@ -17,6 +17,7 @@ function MenuTooltip(props) {
             }
         </Wrapper>
     )
+
 }
 
 export default MenuTooltip

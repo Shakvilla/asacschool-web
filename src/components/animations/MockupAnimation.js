@@ -22,9 +22,18 @@ const Wrapper = styled.div`
     position: relative;
     perspective: 5000;
 
+@media(max-width: 768px){
+    transform: scale(0.6);
+    transform-origin: top left;
+
+}
+@media(max-width: 450px){
+    transform: scale(0.4)
+}
+
     div{
         transform: rotateY(-20deg) rotateX(20deg);
-        transform-origin: bottom left;
+        transform-origin:   bottom left;
 
     }
 
@@ -64,7 +73,7 @@ const Wrapper = styled.div`
         position: absolute;
         width: 183px;
         height: 120px;
-        right: 617px;
+        right: 620px;
         top: 0;
 
 
@@ -81,6 +90,14 @@ const Wrapper = styled.div`
          box-shadow: 0px 16.3881px 32.7761px rgba(99, 30, 187, 0.5);
          backdrop-filter: blur(21.8507px);
         border-radius: 16.3881px;
+
+     @media(max-width: 768px) and (min-width: 468px){
+            right: 300px;
+        }
+
+        @media(max-width: 468px){
+            right: 100px;
+        }
 
     }
 
@@ -106,6 +123,13 @@ const Wrapper = styled.div`
     backdrop-filter: blur(21.8432px);
 
         border-radius: 16.3824px;
+             @media(max-width: 768px) and (min-width: 468px){
+            right: 90px;
+        }
+
+         @media(max-width: 468px){
+            right: -100px;
+        }
 
     }
 
@@ -114,7 +138,7 @@ const Wrapper = styled.div`
     position: absolute;
     width: 701px;
     height: 428px;
-    right: 62px;
+    right: 122px;
     top: 60px;
 
     background: url("../../images/animations/mockup3.svg"),
@@ -123,6 +147,13 @@ const Wrapper = styled.div`
     backdrop-filter: blur(27.3844px);
 
         border-radius: 6.8461px;
+
+         @media (max-width: 468px){
+            right: -600px;
+        }
+         @media(max-width: 768px) and (min-width: 468px){
+            right: -250px;
+        }
 
     }
 
@@ -140,6 +171,13 @@ const Wrapper = styled.div`
     backdrop-filter: blur(27.3844px);
 
     border-radius: 14px;
+     @media(max-width: 468px){
+            right: -200px;
+        }
+
+               @media(max-width: 768px) and (min-width: 468px){
+            right: 20px;
+        }
   }
     
     .mockup5 {
@@ -157,6 +195,14 @@ const Wrapper = styled.div`
     /* Note: backdrop-filter has minimal browser support */
 
     border-radius: 14px;
+     @media(max-width: 468px){
+            right: -628px;
+        }
+
+
+         @media(max-width: 768px) and (min-width: 468px){
+            right: -420px;
+        }
     }
 
 `

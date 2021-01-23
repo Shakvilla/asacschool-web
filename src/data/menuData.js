@@ -17,6 +17,11 @@ export const menuData = [
         link: '/pricing'
     },
     {
+        title: 'Livestreams',
+        icon: '../../images/icons/livestreams.svg',
+        link: '/livestreams'
+    },
+    {
         title: 'Accounts',
         icon: '../../images/icons/tutorials.svg',
         link: '/accounts'
@@ -31,3 +36,4 @@ export const menuData = [
 
 
 ]
+

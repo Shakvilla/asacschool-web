@@ -10,6 +10,13 @@ import MenuTooltip from '../tooltips/MenuTooltip'
 function Header() {
     const [isOpen, setIsOpen] = useState(false)
 
+    const handleClick = (event) => {
+        event.preventDefault()
+        setIsOpen(!isOpen)
+        console.dir(event)
+    }
+
+
     return (
         <Wrapper onClick={() => setIsOpen(!isOpen)}>
             <Link to="/">
@@ -18,15 +25,22 @@ function Header() {
             <MenuWrapper count={menuData.length}>
                 {menuData.map((item, index) =>
                     item.link === "/accounts" ? (
-                        <MenuButton onClick={() => setIsOpen(!isOpen)}>Account</MenuButton>
+                        <MenuButton
+                            key={index}
+                            item={item}
+                            onClick={(event) => handleClick(event)}
+                        />
                     ) : (
                             <MenuButton key={index} item={item}
 
-                                onClick={() => setIsOpen(!isOpen)}
+                            // onClick={() => setIsOpen(!isOpen)}
                             />
 
                         )
                 )}
+                <HamburgerWrapper>
+                    <MenuButton item={{ title: "", icon: "../../images/icons/hamburger.svg", link: "" }} />
+                </HamburgerWrapper>
             </MenuWrapper>
             <MenuTooltip isOpen={isOpen} />
         </Wrapper>
@@ -50,6 +64,15 @@ const Wrapper = styled.div`
         height: 25px;
     }
 
+@media screen and(max-width: 768px){
+    top: 30px;
+}
+
+
+@media screen and(max-width: 450px){
+    top: 20px;
+    padding: 0 20px;
+}
 `
 
 const MenuWrapper = styled.div`
@@ -57,6 +80,25 @@ const MenuWrapper = styled.div`
     grid-template-columns: repeat(${props => props.count},auto);
     gap: 30px;
     /* overflow: hidden; */
+
+    @media screen and (max-width: 768px){
+
+
+      >  a{
+            display: none;
+        }
+                grid-template-columns: auto;
+
+    }
 `
 
+
+const HamburgerWrapper = styled.div`
+display: none;
+
+@media screen and (max-width: 768px){
+    display: block;
+}
+
+`
 
