@@ -1,5 +1,5 @@
 import { Link } from 'gatsby'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import logo from '../../images/icons/logo.svg'
 import { menuData } from '../../data/menuData'
@@ -16,7 +16,17 @@ function Header() {
         console.dir(event)
     }
 
+    function handleClickOutside(event) {
 
+        console.log("Document is clicked!!")
+
+    }
+
+
+    useEffect(() => {
+
+        document.addEventListener("mousedown", handleClickOutside)
+    }, [])
     return (
         <Wrapper onClick={() => setIsOpen(!isOpen)}>
             <Link to="/">
@@ -39,7 +49,7 @@ function Header() {
                         )
                 )}
                 <HamburgerWrapper>
-                    <MenuButton item={{ title: "", icon: "../../images/icons/hamburger.svg", link: "" }} />
+                    <MenuButton item={{ title: "", icon: "../../images/icons/hamburger.svg", link: "/" }} />
                 </HamburgerWrapper>
             </MenuWrapper>
             <MenuTooltip isOpen={isOpen} />
