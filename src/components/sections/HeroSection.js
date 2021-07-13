@@ -6,6 +6,7 @@ import { themes } from '../styles/ColorStyles'
 import PurchaseButton from '../buttons/PurchaseButton'
 import MockupAnimation from '../animations/MockupAnimation'
 import WaveBackground from '../backgrounds/WaveBackground'
+import TextAnimations from '../animations/TextAnimations'
 
 
 function HeroSection() {
@@ -15,8 +16,8 @@ function HeroSection() {
                 <WaveBackground />
                 <ContentWrapper>
                     <TextWrapper>
-                        <Title>Asac <br /> School <br /> Learn to Code</Title>
-                        <Description>Welcome to your new Gatsby site.Welcome to asac school, your number onne place for learning programming.</Description>
+                        <Title>Asac School <br /> <TextAnimations />  </Title>
+                        <Description>Welcome to asac school, your number onne place for learning programming.</Description>
                         <PurchaseButton title="Start Learning"
                             subtitle="120+ hours of videos"
                         />
