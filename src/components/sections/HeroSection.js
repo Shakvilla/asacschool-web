@@ -16,7 +16,7 @@ function HeroSection() {
                 <WaveBackground />
                 <ContentWrapper>
                     <TextWrapper>
-                        <Title>Asac School <br /> <TextAnimations />  </Title>
+                        <Title>Asac School <br /> <TextAnimations />  and code apps </Title>
                         <Description>Welcome to asac school, your number onne place for learning programming.</Description>
                         <PurchaseButton title="Start Learning"
                             subtitle="120+ hours of videos"
